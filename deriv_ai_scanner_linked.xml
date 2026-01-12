@@ -1,0 +1,46 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <!-- R_100 Synthetic Index AI Signal -->
+  <block type="trade" x="50" y="50">
+    <field name="MARKET">synthetic_index</field>
+    <field name="SYMBOL">R_100</field>
+    <field name="TRADETYPE">CALL</field>
+    <field name="DURATION">1</field>
+    <field name="DURATION_UNIT">t</field>
+    <field name="AMOUNT">1</field>
+    <next>
+      <!-- Connect to AI Market Scanner -->
+      <block type="ai_signal_check" x="50" y="150">
+        <field name="MARKET">R_100</field>
+        <field name="SIGNAL">CALL</field>
+        <next>
+          <!-- R_50 Synthetic Index -->
+          <block type="trade" x="50" y="250">
+            <field name="MARKET">synthetic_index</field>
+            <field name="SYMBOL">R_50</field>
+            <field name="TRADETYPE">PUT</field>
+            <field name="DURATION">1</field>
+            <field name="DURATION_UNIT">t</field>
+            <field name="AMOUNT">1</field>
+            <next>
+              <block type="ai_signal_check" x="50" y="350">
+                <field name="MARKET">R_50</field>
+                <field name="SIGNAL">PUT</field>
+                <next>
+                  <!-- R_25 Synthetic Index -->
+                  <block type="trade" x="50" y="450">
+                    <field name="MARKET">synthetic_index</field>
+                    <field name="SYMBOL">R_25</field>
+                    <field name="TRADETYPE">CALL</field>
+                    <field name="DURATION">1</field>
+                    <field name="DURATION_UNIT">t</field>
+                    <field name="AMOUNT">1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
