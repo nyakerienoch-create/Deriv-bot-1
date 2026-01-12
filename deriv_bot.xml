@@ -1,0 +1,10 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="trade" x="50" y="50">
+    <field name="MARKET">synthetic_index</field>
+    <field name="SYMBOL">R_100</field>
+    <field name="TRADETYPE">CALL</field>
+    <field name="DURATION">1</field>
+    <field name="DURATION_UNIT">t</field>
+    <field name="AMOUNT">1</field>
+  </block>
+</xml>
